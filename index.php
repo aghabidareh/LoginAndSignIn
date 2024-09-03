@@ -18,7 +18,8 @@ require_once('config/loader.php');
 <body>
   <div class="container" id="container">
     <div class="form-container sign-up">
-      <form>
+      <!-- sign up -->
+      <form method="post" action="action/sign-up.php">
         <h1>Create Account</h1>
         <div class="social-icons">
           <a href="#" class="icons"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -27,13 +28,14 @@ require_once('config/loader.php');
           <a href="#" class="icons"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
         <span>or use your email to registration</span>
-        <input type="text" placeholder="userName">
-        <input type="email" placeholder="Email">
-        <input type="text" placeholder="MObileNumber">
-        <input type="password" placeholder="Password">
-        <button>Sign Up</button>
+        <input type="text" name="username" placeholder="userName">
+        <input type="email" name="email" placeholder="Email">
+        <input type="text" name="mobile" placeholder="MObileNumber">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit" name="signup">Sign Up</button>
       </form>
     </div>
+    <!-- sign in  -->
     <div class="form-container sign-in">
       <form>
         <h1>Sign In</h1>
