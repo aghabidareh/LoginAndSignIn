@@ -44,15 +44,13 @@ require_once('config/loader.php');
             <span>or use your email/password</span>
             <input type="text" name="key" placeholder="Mobile / Username / Email">
             <input type="password" name="password" placeholder="Password">
-            <a href="#">Forget your Password?</a>
             <div style="display: inline;">
-                <button type="submit" name="signin">Sign In</button>
-                <a style="margin-left: 15px" href="otp.php">Send OTP</a>        
+                <button type="submit" name="signin">Sign In</button>       
             </div>
             <?php if(isset($_GET['notUser'])){?>
               <p style="width: 100%;" class="alert alert-danger">User Not Found!</p>
             <?php }else if(isset($_GET['log'])){ ?>
-              <p style="width: 100%;" class="alert alert-success">Now You Logged In!</p>
+              <p style="width: 100%;" class="alert alert-success text-center">Now You Logged In!</p>
               <?php } ?>
       </form>
     </div>
