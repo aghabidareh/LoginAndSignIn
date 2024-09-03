@@ -13,6 +13,7 @@ require_once('config/loader.php');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
@@ -37,17 +38,22 @@ require_once('config/loader.php');
     </div>
     <!-- sign in  -->
     <div class="form-container sign-in">
-      <form>
+      <form method="post" action="action/sign-in.php">
         <h1>Sign In</h1>
  <br>
             <span>or use your email/password</span>
-            <input type="text" placeholder="Mobile / Username / Password">
-            <input type="password" placeholder="Password">
+            <input type="text" name="key" placeholder="Mobile / Username / Email">
+            <input type="password" name="password" placeholder="Password">
             <a href="#">Forget your Password?</a>
             <div style="display: inline;">
-                <button>Sign In</button>
+                <button type="submit" name="signin">Sign In</button>
                 <a style="margin-left: 15px" href="otp.php">Send OTP</a>        
             </div>
+            <?php if(isset($_GET['notUser'])){?>
+              <p style="width: 100%;" class="alert alert-danger">User Not Found!</p>
+            <?php }else if(isset($_GET['log'])){ ?>
+              <p style="width: 100%;" class="alert alert-success">Now You Logged In!</p>
+              <?php } ?>
       </form>
     </div>
     <div class="toggle-container">
@@ -67,4 +73,5 @@ require_once('config/loader.php');
   </div>
 </body>
 <script src="./assets/script/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
